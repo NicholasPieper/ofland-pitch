@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Mulish:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #F2E7D3; color: #43301F; font-family: 'Mulish', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #A84B2A; text-decoration: none; }
+  a:hover { color: #8f3d20; }
+  ::selection { background: #A84B2A; color: #F2E7D3; }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="background:#F2E7D3; color:#43301F; font-family:'Mulish',system-ui,sans-serif; overflow-x:hidden;">
+  <sc-if value="{{ showGrain }}" hint-placeholder-val="{{ false }}">
+    <div aria-hidden="true" style="position:fixed; inset:0; z-index:9999; pointer-events:none; opacity:0.07; mix-blend-mode:multiply; background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E');"></div>
+  </sc-if>
+
+  <div style="max-width:1120px; margin:0 auto; padding:clamp(20px,4vw,44px);">
+
+    <!-- 1 · HEADER -->
+    <header data-screen-label="Header" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:24px 40px; padding-bottom:clamp(24px,4vw,48px);">
+      <img src="uploads/ofland-logo.png" alt="Ofland Escalante" style="height:56px; width:auto; display:block;">
+      <div style="text-align:right; max-width:420px;">
+        <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:16px; letter-spacing:0.14em; text-transform:uppercase; color:#43301F;">Stas &amp; Nick</div>
+        <div style="font-size:13.5px; color:#43301F; opacity:0.72; margin-top:4px;">UGC creators · travel &amp; hospitality</div>
+        <div style="font-size:13px; color:#B98A5E; margin-top:10px; letter-spacing:0.01em; line-height:1.7;">@goeverywhere_doeverything · gedetravels@gmail.com</div>
+      </div>
+    </header>
+
+    <!-- 2 · HOOK -->
+    <section data-screen-label="Hook" style="padding-bottom:clamp(32px,5vw,60px);">
+      <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:clamp(24px,4vw,60px);">
+        <div style="flex:1 1 440px; min-width:min(100%,440px);">
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:0.32em; text-transform:uppercase; color:#B98A5E; margin-bottom:clamp(14px,2vw,22px);">Ofland Escalante · Utah</div>
+          <h1 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:clamp(2.1rem,6vw,4rem); line-height:0.98; letter-spacing:-0.01em; color:#A84B2A; text-transform:uppercase; margin:0; max-width:14ch;">I've stayed at Ofland twice.</h1>
+        </div>
+        <div style="flex:1 1 360px; max-width:520px;">
+          <p style="font-size:clamp(1.05rem,1.6vw,1.3rem); line-height:1.62; color:#43301F; margin:0;">First solo in 2022, then again a year later with my husband (Nick), because I couldn't stop thinking about it. Now I create content, I'll be passing through in a couple of weeks, and I'd love to make assets you can keep.</p>
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:#A84B2A; margin:clamp(16px,2.5vw,22px) 0 0;">— Stas</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · SELECTED WORK -->
+    <section data-screen-label="Selected work" style="padding-bottom:clamp(40px,6vw,68px);">
+      <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:0.32em; text-transform:uppercase; color:#B98A5E; margin-bottom:clamp(14px,2vw,22px);">A few things I've made</div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap:clamp(14px,2vw,22px);">
+
+        <figure style="margin:0; position:relative;">
+          <div style="position:relative; aspect-ratio:9/16; border-radius:12px; overflow:hidden; border:1px solid #B98A5E; background:#1F1C19;">
+            <video ref="{{ videoRef0 }}" playsinline preload="metadata" controls="{{ played0 }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; background:#1F1C19;">
+              <source src="{{ videoUrl0 }}" type="video/mp4">
+            </video>
+            <sc-if value="{{ notPlayed0 }}" hint-placeholder-val="{{ true }}">
+              <image-slot id="cover-1" shape="rect" fit="cover" src="uploads/IMG_9677.PNG" placeholder="Drop cover photo · 9:16" style="position:absolute; inset:0; z-index:1;"></image-slot>
+              <button onClick="{{ play0 }}" aria-label="Play reel 1" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:transparent; border:0; padding:0; cursor:pointer; pointer-events:none; z-index:2;">
+                <span style="pointer-events:auto; width:66px; height:66px; border-radius:50%; background:rgba(31,28,25,0.5); display:flex; align-items:center; justify-content:center; transition:transform .18s ease, background .18s ease;" style-hover="transform:scale(1.06); background:rgba(168,75,42,0.92);">
+                  <span style="width:0; height:0; border-style:solid; border-width:9px 0 9px 15px; border-color:transparent transparent transparent #F2E7D3; margin-left:4px;"></span>
+                </span>
+              </button>
+            </sc-if>
+          </div>
+        </figure>
+
+        <figure style="margin:0; position:relative;">
+          <div style="position:relative; aspect-ratio:9/16; border-radius:12px; overflow:hidden; border:1.5px solid #A84B2A; background:#1F1C19;">
+            <video ref="{{ videoRef1 }}" playsinline preload="metadata" controls="{{ played1 }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; background:#1F1C19;">
+              <source src="{{ videoUrl1 }}" type="video/mp4">
+            </video>
+            <sc-if value="{{ notPlayed1 }}" hint-placeholder-val="{{ true }}">
+              <image-slot id="cover-2" shape="rect" fit="cover" src="uploads/IMG_4764.jpg" placeholder="Drop cover photo · 9:16" style="position:absolute; inset:0; z-index:1;"></image-slot>
+              <button onClick="{{ play1 }}" aria-label="Play reel 2" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:transparent; border:0; padding:0; cursor:pointer; pointer-events:none; z-index:2;">
+                <span style="pointer-events:auto; width:66px; height:66px; border-radius:50%; background:rgba(31,28,25,0.5); display:flex; align-items:center; justify-content:center; transition:transform .18s ease, background .18s ease;" style-hover="transform:scale(1.06); background:rgba(168,75,42,0.92);">
+                  <span style="width:0; height:0; border-style:solid; border-width:9px 0 9px 15px; border-color:transparent transparent transparent #F2E7D3; margin-left:4px;"></span>
+                </span>
+              </button>
+            </sc-if>
+          </div>
+        </figure>
+
+        <figure style="margin:0; position:relative;">
+          <div style="position:relative; aspect-ratio:9/16; border-radius:12px; overflow:hidden; border:1px solid #B98A5E; background:#1F1C19;">
+            <video ref="{{ videoRef2 }}" playsinline preload="metadata" controls="{{ played2 }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; background:#1F1C19;">
+              <source src="{{ videoUrl2 }}" type="video/mp4">
+            </video>
+            <sc-if value="{{ notPlayed2 }}" hint-placeholder-val="{{ true }}">
+              <image-slot id="cover-3" shape="rect" fit="cover" src="uploads/pasted-1783641497941-0.png" placeholder="Drop cover photo · 9:16" style="position:absolute; inset:0; z-index:1;"></image-slot>
+              <button onClick="{{ play2 }}" aria-label="Play reel 3" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:transparent; border:0; padding:0; cursor:pointer; pointer-events:none; z-index:2;">
+                <span style="pointer-events:auto; width:66px; height:66px; border-radius:50%; background:rgba(31,28,25,0.5); display:flex; align-items:center; justify-content:center; transition:transform .18s ease, background .18s ease;" style-hover="transform:scale(1.06); background:rgba(168,75,42,0.92);">
+                  <span style="width:0; height:0; border-style:solid; border-width:9px 0 9px 15px; border-color:transparent transparent transparent #F2E7D3; margin-left:4px;"></span>
+                </span>
+              </button>
+            </sc-if>
+          </div>
+        </figure>
+
+      </div>
+      <p style="font-size:14px; color:#43301F; opacity:0.68; margin:clamp(16px,2vw,22px) 0 0; max-width:none; line-height:1.6;">For reference only. We don't work on a template and will write and shoot everything specifically for Ofland.</p>
+    </section>
+
+    <!-- 4 · WHAT I'LL MAKE -->
+    <section data-screen-label="What I'll make" style="padding-bottom:clamp(56px,9vw,104px);">
+      <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:0.32em; text-transform:uppercase; color:#B98A5E; margin-bottom:clamp(22px,3vw,34px);">Scroll-stopping video ideas</div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap:clamp(16px,2.5vw,26px);">
+        <div style="background:rgba(185,138,94,0.10); border:1px solid rgba(185,138,94,0.4); border-radius:16px; padding:clamp(24px,3vw,34px);">
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:clamp(1.15rem,1.7vw,1.4rem); letter-spacing:0.01em; color:#43301F; margin-bottom:14px;">1 · Honest review · 30–45s</div>
+          <p style="font-size:15.5px; line-height:1.62; color:#43301F; opacity:0.82; margin:0;">My real returning-guest story, told straight. Authentic social proof that turns browsers into bookers.</p>
+        </div>
+        <div style="background:rgba(185,138,94,0.10); border:1px solid rgba(185,138,94,0.4); border-radius:16px; padding:clamp(24px,3vw,34px);">
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:clamp(1.15rem,1.7vw,1.4rem); letter-spacing:0.01em; color:#43301F; margin-bottom:14px;">2 · The ultimate Escalante basecamp · 45–60s</div>
+          <p style="font-size:15.5px; line-height:1.62; color:#43301F; opacity:0.82; margin:0;">Ofland woven into the canyons, Lower Calf Creek, and Scenic Byway 12. This way you get found when people search what to <em>do</em> here, not just where to stay.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · LOGISTICS -->
+    <section data-screen-label="Logistics" style="padding-bottom:clamp(56px,9vw,104px);">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap:clamp(16px,2.5vw,28px); border-top:1px solid rgba(185,138,94,0.5); border-bottom:1px solid rgba(185,138,94,0.5); padding:clamp(22px,3vw,30px) 0;">
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:#B98A5E;">When</div>
+          <div style="font-size:15px; line-height:1.5; color:#43301F;">Passing through July 30 or August 11</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:#B98A5E;">Compensation</div>
+          <div style="font-size:15px; line-height:1.5; color:#43301F;">A project fee based on the deliverables you choose, plus a hosted 2-night stay (the time we need to capture nature at sunrise, property at golden hour, and drive-in movie night at their best.)</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:#B98A5E;">Yours</div>
+          <div style="font-size:15px; line-height:1.5; color:#43301F;">Finished video licensed for your channels</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 · CTA -->
+    <section data-screen-label="CTA" style="padding-bottom:clamp(24px,4vw,48px);">
+      <div style="background:#A84B2A; border-radius:20px; padding:clamp(40px,6vw,72px) clamp(24px,4vw,48px); text-align:center;">
+        <h2 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:clamp(1.7rem,4vw,2.9rem); line-height:1.06; letter-spacing:0.01em; color:#F2E7D3; text-transform:uppercase; margin:0 0 clamp(16px,2.5vw,22px); max-width:16ch; margin-left:auto; margin-right:auto;">Let's make something great for Ofland</h2>
+        <p style="font-size:clamp(0.95rem,1.4vw,1.1rem); line-height:1.6; color:rgba(242,231,211,0.86); margin:0 auto; max-width:520px;">Reply to my email and I'll send the concepts and a simple package. · <a href="mailto:gedetravels@gmail.com" style="color:#F2E7D3; text-decoration:underline; text-underline-offset:3px;">gedetravels@gmail.com</a></p>
+      </div>
+    </section>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;videoUrl1&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;https://res.cloudinary.com/nr3qi8yk/video/upload/v1783638160/airbnb_ugc_pioneertown_zrkzfz.mp4&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Videos&quot; },
+  &quot;videoUrl2&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;https://res.cloudinary.com/nr3qi8yk/video/upload/v1783638962/costa_rica_lodge_HD_z4rnho.mp4&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Videos&quot; },
+  &quot;videoUrl3&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;https://res.cloudinary.com/nr3qi8yk/video/upload/v1783641425/chokh_guest_house_ugc_jdbj7j.mp4&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Videos&quot; },
+  &quot;filmGrain&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Style&quot; }
+}">
+class Component extends DCLogic {
+  state = { played: [false, false, false] };
+  videoRefs = [React.createRef(), React.createRef(), React.createRef()];
+  play(i) {
+    const v = this.videoRefs[i].current;
+    if (v) { try { const r = v.play(); if (r && r.catch) r.catch(() => {}); } catch (e) {} }
+    this.setState((s) => { const played = s.played.slice(); played[i] = true; return { played }; });
+  }
+  renderVals() {
+    const p = this.state.played;
+    return {
+      showGrain: this.props.filmGrain ?? false,
+      videoUrl0: this.props.videoUrl1 ?? 'videos/reel-1.mp4',
+      videoUrl1: this.props.videoUrl2 ?? 'videos/reel-2.mp4',
+      videoUrl2: this.props.videoUrl3 ?? 'videos/reel-3.mp4',
+      played0: p[0], played1: p[1], played2: p[2],
+      notPlayed0: !p[0], notPlayed1: !p[1], notPlayed2: !p[2],
+      play0: () => this.play(0),
+      play1: () => this.play(1),
+      play2: () => this.play(2),
+      videoRef0: this.videoRefs[0],
+      videoRef1: this.videoRefs[1],
+      videoRef2: this.videoRefs[2],
+    };
+  }
+}
+</script>
+</body>
+</html>
